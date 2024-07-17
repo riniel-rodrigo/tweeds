@@ -18,7 +18,7 @@ export default function Home() {
             >
             </textarea>
 
-            <div className="flex justify-between" >
+            <div className={errors?.password && (errors.password.type === 'maxLength' || errors.password.type === 'required') ? 'flex justify-between' : 'flex justify-end'}>
               {errors?.password?.type === 'maxLength' && (
                 <span className="text-yellow-600 text-sm">Você atingiu o limite de palavras!</span>
               )}
